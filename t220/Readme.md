@@ -7,7 +7,7 @@ Things required to build .
 
  get a c5a.8xlarge Ubuntu 20.04 instance. more cores more faster the build
 
- > :warning: please use latest instace don't use one with ccache enabled
+ > :warning: please use latest instnace don't use one with ccache enabled
 
  # Hardware
 
@@ -127,5 +127,32 @@ git config --global user.name "Your Name"
     bash treble_build_pe/build.sh
     ```
 
+    after successful build you will see pixel experience out in ~/builds folder
 
+    like PixelExperience-*.img.xz
+
+    ## making changes
+
+    open this file in vascode
+
+  /home/ubuntu/android/lineage/packages/apps/Settings/res/xml/reset_dashboard_fragment.xml
+
+
+    comment ount the following line
+
+    ```xml
+    
+    <com.android.settingslib.RestrictedPreference
+        android:key="factory_reset"
+        android:title="@string/main_clear_title"
+        settings:keywords="@string/keywords_factory_data_reset"
+        settings:userRestriction="no_factory_reset"
+        settings:useAdminDisabledSummary="true"
+        android:fragment="com.android.settings.MainClear" /> 
+    ```
+
+    now we are done removing factory reset options
+
+
+    copy download slim version to your windows pc
 
