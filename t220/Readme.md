@@ -234,6 +234,124 @@ git config --global user.name "Your Name"
     ```cd /mnt/c/Users/{username}/Desktop/SamFw-T220/{extracted AP folder}/
     ```
 
+    now these steps are crucial
+
+    install xz tool 
+
+    ```bash
+    sudo apt-get install  unxz
+    sudo apt-get install lz4
+
+    ```
+
+    in wsl terminal in extracted AP folder.
+
+    - Decompress the image
+
+    ```bash
+    lz4 -d super.img.lz4 super.img
+    ```
+
+    - convert the sparse super.img
+
+    ```bash
+    simg2img super.img super.ext4.img
+    ```
+
+    - Unpack ext4 .img
+
+    ```bash
+    lpunpack super.ext4.img
+    ```
+
+    now you will see system.img, vendor.img, product.img, odm.img
+
+    ## replacing pixelexperience with system
+
+    copy the downloaded pixel experience img.xz to extracted AP folder
+
+    delete the system.img
+
+    - uncompress pixelexperience.img.xz
+
+    ```bash
+    unxz pixelexperience.img.xz
+    ```
+
+    rename uncompress img from pixelexperience.img to system.img
+
+    ## note down the partition sizes
+
+    get all .img sizes
+
+    ```bash
+    stat -c '%n %s' *.img
+    ```
+
+    note down the partition sizes
+
+    > :warning: this step is very crucials please pay attention to every details else it will fail
+
+    now replace the values in the below command
+
+    ```bash
+    lpmake --metadata-size 65536 \
+--super-name super \
+--metadata-slots 2 \
+--device super:ORIGINAL_SUPER_IMG_SIZE \
+--group main:SUM_OF_ALL_PARTITIONS_SIZES \
+--partition odm:readonly:ODM_PARTITION_SIZE:main \
+--image odm=./odm.img \
+--partition product:readonly:PRODUCT_PARTITION_SIZE:main \
+--image product=./product.img \
+--partition system:readonly:SYSTEM_PARTITION_SIZE:main \
+--image system=./system.img \
+--partition vendor:readonly:VENDOR_PARTITION_SIZE:main \
+--image vendor=./vendor.img \
+--sparse \
+--output ./super_new.img
+```
+
+ORIGINAL_SUPER_IMG_SIZE = size of super.ext4.img (not super.img)
+
+SUM_OF_ALL_PARTITIONS_SIZES = sum of odm + system (new )+ product + vendor
+
+replace all the values in the above command
+
+and paste it in wsl terminal
+
+make sure you are in extracted AP file
+
+if you got any error like out of space. just calculate the space 
+
+SPACE_TO_ADD=ORIGINAL_SUPERIMAGE_SIZE - used space - requested space
+
+
+
+add the  SPACE_TO_ADD to ORIGINAL_SUPERIMAGE_SIZE
+
+NEW_SUPER_IMG_SIZE = SPACE_TO_ADD + ORIGINAL_SUPERIMAGE_SIZE
+
+now replace NEW_SUPER_IMAGE_SIZE value with ORIGINAL_SUPERIMAGE_SIZE in the command
+
+now try the new command again
+
+you might get system space is bigger than requested error. 
+
+just do the same calculation and replace the system size and new SUM_OF_ALL_PARTITION_SIZES
+
+now run the command again.
+
+you will get invalid sparse file header waring but it's a good sign
+
+
+
+
+    
+
+
+
+
 
 
 
