@@ -262,15 +262,15 @@ comment out these lines
   and 
 
   ```cpp
-    // { "Enter fastboot", Device::ENTER_FASTBOOT },
-  // { "Reboot to bootloader", Device::REBOOT_BOOTLOADER },
-  // { "Reboot to recovery", Device::REBOOT_RECOVERY },
-  // { "Mount/unmount system", Device::MOUNT_SYSTEM },
-  // { "View recovery logs", Device::VIEW_RECOVERY_LOGS },
-  // { "Enable ADB", Device::ENABLE_ADB },
-  // { "Run graphics test", Device::RUN_GRAPHICS_TEST },
-  // { "Run locale test", Device::RUN_LOCALE_TEST },
-  // { "Enter rescue", Device::ENTER_RESCUE },
+     { "Enter fastboot", Device::ENTER_FASTBOOT },
+   { "Reboot to bootloader", Device::REBOOT_BOOTLOADER },
+   { "Reboot to recovery", Device::REBOOT_RECOVERY },
+   { "Mount/unmount system", Device::MOUNT_SYSTEM },
+   { "View recovery logs", Device::VIEW_RECOVERY_LOGS },
+   { "Enable ADB", Device::ENABLE_ADB },
+   { "Run graphics test", Device::RUN_GRAPHICS_TEST },
+   { "Run locale test", Device::RUN_LOCALE_TEST },
+   { "Enter rescue", Device::ENTER_RESCUE },
   ```
   ### removing factory reset from settings
 
@@ -285,13 +285,13 @@ comment out these lines
 
     ```xml
     <!-- Factory reset -->
-    <!-- <com.android.settingslib.RestrictedPreference
+    <com.android.settingslib.RestrictedPreference
         android:key="factory_reset"
         android:title="@string/main_clear_title"
         settings:keywords="@string/keywords_factory_data_reset"
         settings:userRestriction="no_factory_reset"
         settings:useAdminDisabledSummary="true"
-        android:fragment="com.android.settings.MainClear" /> -->
+        android:fragment="com.android.settings.MainClear" /> 
     ```
 
     now we are done removing factory reset options
