@@ -322,17 +322,17 @@ and paste it in wsl terminal
 
 make sure you are in extracted AP file
 
-if you got any error like out of space. just calculate the space 
+- if you got any error like out of space. just calculate the space 
 
-SPACE_TO_ADD=ORIGINAL_SUPERIMAGE_SIZE - used space - requested space
+    SPACE_TO_ADD=ORIGINAL_SUPERIMAGE_SIZE - used space - requested space
 
 
 
-add the  SPACE_TO_ADD to ORIGINAL_SUPERIMAGE_SIZE
+    add the  SPACE_TO_ADD to ORIGINAL_SUPERIMAGE_SIZE
 
-NEW_SUPER_IMG_SIZE = SPACE_TO_ADD + ORIGINAL_SUPERIMAGE_SIZE
+    NEW_SUPER_IMG_SIZE = SPACE_TO_ADD + ORIGINAL_SUPERIMAGE_SIZE
 
-now replace NEW_SUPER_IMAGE_SIZE value with ORIGINAL_SUPERIMAGE_SIZE in the command
+- now replace NEW_SUPER_IMAGE_SIZE value with ORIGINAL_SUPERIMAGE_SIZE in the command
 
 now try the new command again
 
@@ -343,6 +343,8 @@ just do the same calculation and replace the system size and new SUM_OF_ALL_PART
 now run the command again.
 
 you will get invalid sparse file header waring but it's a good sign
+
+
 
 
 
