@@ -191,6 +191,50 @@ git config --global user.name "Your Name"
 
     ## install wsl ubuntu distro
 
+    open powershell as administrator
+
+    and run the following command
+
+    ```
+    wsl --install
+    ```
+
+    this will install wsl . 
+
+    - Download ubuntu distro
+
+    ```
+    wsl --install -d Ubuntu-20.04
+    ```
+
+    this will take some time and will ask you to set username and password
+
+    ## setting up ota tools
+
+    you can access windows files in /mnt/c/ path
+
+    if you have this repo in C:\ drive downloads folder the path will be 
+
+    /mnt/c/users/{username}/Downloads/custom-rom-docs/otatools/
+
+    change permissions first
+
+    ```bash
+    sudo chmod 755 /mnt/c/users/{username}/Downloads/custom-rom-docs/otatools/bin/*
+    ```
+
+    now set path 
+
+    ```bash
+    export PATH=/mnt/c/users/{username}/Downloads/custom-rom-docs/otatools/bin:$PATH
+    ```
+
+    now go to the path where you extracted AP tar file go to extracted folder from wsl terminal
+
+    ```cd /mnt/c/Users/{username}/Desktop/SamFw-T220/{extracted AP folder}/
+    ```
+
+
 
 
 
