@@ -296,21 +296,21 @@ git config --global user.name "Your Name"
 
     ```bash
     lpmake --metadata-size 65536 \
---super-name super \
---metadata-slots 2 \
---device super:ORIGINAL_SUPER_IMG_SIZE \
---group main:SUM_OF_ALL_PARTITIONS_SIZES \
---partition odm:readonly:ODM_PARTITION_SIZE:main \
---image odm=./odm.img \
---partition product:readonly:PRODUCT_PARTITION_SIZE:main \
---image product=./product.img \
---partition system:readonly:SYSTEM_PARTITION_SIZE:main \
---image system=./system.img \
---partition vendor:readonly:VENDOR_PARTITION_SIZE:main \
---image vendor=./vendor.img \
---sparse \
---output ./super_new.img
-```
+    --super-name super \
+    --metadata-slots 2 \
+    --device super:ORIGINAL_SUPER_IMG_SIZE \
+    --group main:SUM_OF_ALL_PARTITIONS_SIZES \
+    --partition odm:readonly:ODM_PARTITION_SIZE:main \
+    --image odm=./odm.img \
+    --partition product:readonly:PRODUCT_PARTITION_SIZE:main \
+    --image product=./product.img \
+    --partition system:readonly:SYSTEM_PARTITION_SIZE:main \
+    --image system=./system.img \
+    --partition vendor:readonly:VENDOR_PARTITION_SIZE:main \
+    --image vendor=./vendor.img \
+    --sparse \
+    --output ./super_new.img
+    ```
 
 ORIGINAL_SUPER_IMG_SIZE = size of super.ext4.img (not super.img)
 
