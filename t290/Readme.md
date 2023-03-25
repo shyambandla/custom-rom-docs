@@ -255,8 +255,8 @@ open  recovery ui file in this pathin vs code
 comment out these lines 
 
 ```cpp
-// { "Apply update", Device::APPLY_UPDATE },
-  // { "Factory reset", Device::MENU_WIPE },
+ { "Apply update", Device::APPLY_UPDATE },
+  { "Factory reset", Device::MENU_WIPE },
   ```
 
   and 
