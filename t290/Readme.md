@@ -21,7 +21,10 @@ Things required to build .
 
  ## platform tools
 
- ```bash curl -L https://dl.google.com/android/repository/platform-tools-latest-linux.zip -o platform-tools-latest-linux.zip ```
+ ```shell 
+ curl -L https://dl.google.com/android/repository/platform-tools-latest-linux.zip -o platform-tools-latest-linux.zip 
+ 
+ ```
 
  
 
