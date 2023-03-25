@@ -342,7 +342,69 @@ just do the same calculation and replace the system size and new SUM_OF_ALL_PART
 
 now run the command again.
 
-you will get invalid sparse file header waring but it's a good sign
+you will get invalid sparse file header warning but it's a good sign
+
+- Now you will have super_new.img 
+
+## compressing super_new.img
+
+```bash
+    lz4 -B6 --content-size super_new.img super_new.img.lz4
+```
+
+- Delete the vbmeta.img.lz4 in the folder
+
+- Copy the vbmeta.img in this repo to the extracted AP folder
+
+- Compress the vbmeta.img
+
+ ```bash
+ lz4 -B6 --content-size vbmeta.img vbmeta.img.lz4
+ ```
+
+ - Now delete super.img.lz4 
+
+ - Rename super_new.img.lz4 to super.img.lz4
+
+ - now you have new super.img.lz4 and vbmeta.img.lz4
+
+ > :warning: please make super you did everything properly
+
+ - Now copy all files with extention .img.lz4 to the tar-md5-tools folder in this repo
+
+ open cmd in windows and go to the tar-md5-tools folder
+
+ now run batch.bat
+
+
+ wait for sometime . you will see AP_CUSTOM odin.tar.md5
+
+ now copy this AP to extracted samFW folder and replace with AP file.
+  
+
+  ## flashing 
+
+  flash preinstall-recovery and boot to recovery (by holding power+ vol up)
+
+  if you see blank screen try (vol up + vol down) 
+
+  still no screen try power 
+
+  you will see TWRP screen
+
+  now flash multi disabler
+
+  and mount and wipe everything except SD CARD
+
+  go to download mode and flash the ROM . replace AP file with custom file we made now
+
+  after booting go to download mode again and flash the postinstall recovery 
+
+  now everything is done
+
+
+
+
 
 
 
