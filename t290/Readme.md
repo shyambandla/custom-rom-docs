@@ -284,7 +284,7 @@ comment out these lines
     comment ount the following line
 
     ```xml
-    <!-- Factory reset -->
+    
     <com.android.settingslib.RestrictedPreference
         android:key="factory_reset"
         android:title="@string/main_clear_title"
