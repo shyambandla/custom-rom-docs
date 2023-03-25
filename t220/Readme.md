@@ -114,22 +114,24 @@ git config --global user.name "Your Name"
     sudo apt-get install xattr
   ```
 
- - Create a new working directory for your Pixel Experience build and navigate to it:
+- Create a new working directory for your Pixel Experience build and navigate to it:
     ```
     mkdir pixel; cd pixel
     ```
 - Clone this repo:
     ```
-    git clone https://github.com/ponces/treble_build_pe -b thirteen
+    git clone https://github.com/ponces/treble_build_pe -b twelve
     ```
 - Finally, start the build script:
     ```
-    bash treble_build_pe/build.sh
+    bash treble_build_pe/build.sh twelve
     ```
 
     after successful build you will see pixel experience out in ~/builds folder
 
     like PixelExperience-*.img.xz
+
+    delete the builds folder now
 
     ## making changes
 
@@ -154,5 +156,41 @@ git config --global user.name "Your Name"
     now we are done removing factory reset options
 
 
-    copy download slim version to your windows pc
+    open this file in vs code 
+
+    /home/ubuntu/android/lineage/treble_build_pe/build.sh
+
+    comment ount the following line
+
+    ```bash
+    initRepos
+    syncRepos
+    applyPatches
+    ```
+
+    now run build again
+
+    ```
+    bash treble_build_pe/build.sh twelve
+    ```
+
+    this time it will build the img with changes
+
+    builds will be in ~/builds folder
+
+     download slim version to your windows pc
+
+    # Repacking the firmware
+
+    1. download A11 firmware from samfw for t220
+    2. extract the tar file downloaded
+    you will see AP,BL,CSC files
+
+    3. rename AP file extention from .tar.md5 to .tar
+    4. extract the AP tar file
+
+    ## install wsl ubuntu distro
+
+
+
 
