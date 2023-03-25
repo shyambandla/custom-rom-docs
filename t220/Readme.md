@@ -7,7 +7,7 @@ Things required to build .
 
  get a c5a.8xlarge Ubuntu 20.04 instance. more cores more faster the build
 
- !warning: please use latest instace don't use one with ccache enabled
+ > :warning: please use latest instace don't use one with ccache enabled
 
  # Hardware
 
@@ -106,7 +106,7 @@ git config --global user.name "Your Name"
  ```
 
 
- !warning: don't enable cache
+ > :warning: don't enable cache
 
  - Install xattr
 
