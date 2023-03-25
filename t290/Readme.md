@@ -248,6 +248,84 @@ now extract blobs
 
 ## changes to make
 
+open  recovery ui file in this pathin vs code
+
+/home/ubuntu/android/lineage/bootable/recovery/recovery_ui/device.cpp
+
+comment out these lines 
+
+```cpp
+// { "Apply update", Device::APPLY_UPDATE },
+  // { "Factory reset", Device::MENU_WIPE },
+  ```
+
+  and 
+
+  ```cpp
+    // { "Enter fastboot", Device::ENTER_FASTBOOT },
+  // { "Reboot to bootloader", Device::REBOOT_BOOTLOADER },
+  // { "Reboot to recovery", Device::REBOOT_RECOVERY },
+  // { "Mount/unmount system", Device::MOUNT_SYSTEM },
+  // { "View recovery logs", Device::VIEW_RECOVERY_LOGS },
+  // { "Enable ADB", Device::ENABLE_ADB },
+  // { "Run graphics test", Device::RUN_GRAPHICS_TEST },
+  // { "Run locale test", Device::RUN_LOCALE_TEST },
+  // { "Enter rescue", Device::ENTER_RESCUE },
+  ```
+  ### removing factory reset from settings
+
+  now we remove the factory reset from the settings
+
+  open this file in vascode
+
+  /home/ubuntu/android/lineage/packages/apps/Settings/res/xml/reset_dashboard_fragment.xml
+
+
+    comment ount the following line
+
+    ```xml
+    <!-- Factory reset -->
+    <!-- <com.android.settingslib.RestrictedPreference
+        android:key="factory_reset"
+        android:title="@string/main_clear_title"
+        settings:keywords="@string/keywords_factory_data_reset"
+        settings:userRestriction="no_factory_reset"
+        settings:useAdminDisabledSummary="true"
+        android:fragment="com.android.settings.MainClear" /> -->
+    ```
+
+    now we are done removing factory reset options
+
+## now build
+
+go to source tree root
+
+```bash 
+    croot
+    brunch gtowifi
+```
+
+you will get the final zip in out directory
+
+/home/ubuntu/android/lineage/out/target/product/gtowifi/lineage-20.0-20230324-UNOFFICIAL-gtowifi.zip
+
+and the recovery image 
+
+/home/ubuntu/android/lineage/out/target/product/gtowifi/recovery.img
+
+now make a tar file 
+
+```bash 
+    tar cvf recovery.tar recovery.img
+```
+
+now download both zip and tar files
+
+
+
+
+
+
 
 
 
