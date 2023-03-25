@@ -368,7 +368,7 @@ you will get invalid sparse file header warning but it's a good sign
 
  - now you have new super.img.lz4 and vbmeta.img.lz4
 
- > :warning: please make super you did everything properly
+ > :warning: please make sure you did everything properly
 
  - Now copy all files with extention .img.lz4 to the tar-md5-tools folder in this repo
 
