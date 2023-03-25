@@ -19,13 +19,37 @@ Things required to build .
 
  connect to AWS instance using vs code. 
 
+now update the env 
+
+ ```bash
+    sudo apt-get update
+ ```
+
+ ```bash
+    sudo apt-get upgrade
+ ```
+
  ## platform tools
+
+open terminal in vscode and paste this 
 
  ```shell 
  curl -L https://dl.google.com/android/repository/platform-tools-latest-linux.zip -o platform-tools-latest-linux.zip 
  
  ```
+this will download the platform tools
 
+download unzip
+
+```bash
+    sudo apt install unzip
+ ```
+
+ ```bash 
+    unzip platform-tools-latest-linux.zip
+ ```
+
+ 
  
 
  
